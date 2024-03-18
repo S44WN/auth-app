@@ -5,7 +5,6 @@ import bcrypt from "bcrypt";
 
 import { RegisterSchema } from "@/schemas";
 import { db } from "@/lib/db";
-import { get } from "http";
 import { getUserByEmail } from "@/data/user";
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
@@ -41,6 +40,6 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
   });
 
   // TODO: send vrification email to the user
- 
+
   return { success: "User Created!" };
 };
